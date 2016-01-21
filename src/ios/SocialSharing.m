@@ -95,7 +95,7 @@
     [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
       [self cleanupStoredFiles];
       NSLog(@"SocialSharing app selected: %@", activityType);
-      CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:completed];
+      CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:activityType];
       [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
     
